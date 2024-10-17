@@ -77,7 +77,7 @@ T &Matrix<T>::operator () (size_t i, size_t j)
 //template <typename T>
 //using const_iterator=typename std::vector<std::vector<T>>::const_iterator;
 
-/*template <typename T>
+template <typename T>
 std::vector<std::vector<T>>::const_iterator Matrix<T>::begin() const
 {
 	return data.cbegin();
@@ -87,7 +87,7 @@ template <typename T>
 std::vector<std::vector<T>>::const_iterator Matrix<T>::end() const
 {
 	return data.cend();
-}*/
+}
 
 template <typename T>
 std::ostream &operator << (std::ostream &out , const Matrix<T> &matrix)
@@ -148,6 +148,46 @@ Matrix<T> &Matrix<T>::operator += (const Matrix<T> &other)
 	}
 	
 	return *this;
+}
+
+template <typename T>
+Matrix<T> Matrix<T>::operator + (const Matrix<T> &m1, const Matrix<T> &m2)
+{
+	auto tmp {m1};
+	tmp += m1;
+	return tmp;
+}
+
+template <typename T1>
+template <typename T>
+bool Matrix<T>::operator == (const Matrix<T1> &other) const
+{
+	const size_t rows = getrows();
+	const size_t colomus = getcolumus();
+	if(rows != other.getrows() || colomus != other.getcolumus())
+	{
+		return false;
+	}
+	
+	for(size_t i = 0; i != rows; i++)
+	{
+		for(size_t j = 0; j != colomus; j++)
+		{
+			if(!((*this)(i, j) == other(i, j)))
+			{
+				return false;
+			}
+		}
+	}
+	
+	return true;
+}
+
+template <typename T>
+template <typename T1, typename T2>
+bool operator != (const Matrix<T1> &m1, const Matrix<T2> &m2)
+{
+	return !(m1 == m2);
 }
 
 #endif //matrix_hpp
