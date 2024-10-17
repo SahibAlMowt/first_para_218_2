@@ -62,13 +62,13 @@ std::vector<T> &Matrix<T>::operator [] (size_t i)
 }
 
 template <typename T>
-const T &operator () (size_t i, size_t j) const
+const T &operator () (size_t i, size_t j) const//const T &linal::Matrix<T>::operator () (size_t i, size_t j) const
 {
 	return data[i][j];
 }
 
 template <typename T>
-T &operator () (size_t i, size_t j)
+T &operator () (size_t i, size_t j)//T &linal::Matrix<T>::operator () (size_t i, size_t j)
 {
 	return data[i][j];
 }
