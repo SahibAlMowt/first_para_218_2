@@ -1,0 +1,4 @@
+/home/stud-10/Desktop/Sahib Shukurlu/projects/fourth/build/CMakeFiles/mytime.dir
+/home/stud-10/Desktop/Sahib Shukurlu/projects/fourth/build/CMakeFiles/prog.dir
+/home/stud-10/Desktop/Sahib Shukurlu/projects/fourth/build/CMakeFiles/edit_cache.dir
+/home/stud-10/Desktop/Sahib Shukurlu/projects/fourth/build/CMakeFiles/rebuild_cache.dir
